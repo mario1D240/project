@@ -21,7 +21,7 @@
 	<!-- ____________________________ Window Settings ___________________________ -->
 
 	<!--These window settings apply to all targets-->
-	<window width="1280" height="720" fps="" background="#000000" hardware="true" vsync="false" />
+	<window width="1280" height="720" fps="120" background="#000000" hardware="true" vsync="false" />
 
 	<!--HTML5-specific-->
 	<window if="html5" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="true"/>
@@ -47,10 +47,10 @@
 	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
-	<define name="MODS_ALLOWED" unless="web"/>
-	<define name="LUA_ALLOWED" unless="web"/>
+	<define name="MODS_ALLOWED" if="desktop || web" />
+	<define name="LUA_ALLOWED" if="desktop || web" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
-	<define name="VIDEOS_ALLOWED" unless="32bits"/>
+	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits"/>
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS ON TITLE SCREEN -->
 
 	<!-- DONT ENABLE THIS -->
